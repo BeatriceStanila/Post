@@ -4,78 +4,34 @@ namespace StackOverflowPost
 {
     public class Post
     {
-        // private fields
-        private string _title;
-        private string _description;
-        private DateTime _created;
+        //// private fields
+        //private string _title;
+        //private string _description;
+        //private DateTime _created;
 
-        private int _upvote;
-        private int _downvote;
+        //private int _upvote;
+        //private int _downvote;
 
-        private int _voteCount;
-
-
-        // public properties
-
-        public string Title
-        {
-            get
-            {
-                return _title;
-            }
-
-            set
-            {
-                _title = value;
-            }
-        }
+        //private int _voteCount;
 
 
-        public string Description
-        {
-            get
-            {
-                return _description;
-            }
-            set
-            {
-                _description = value;
-            }
-        }
+        // auto-implemented public properties
 
-        public DateTime Created
-        {
-            get
-            {
-                return _created;
-            }
-            set
-            {
-                _created = value;
-            }
-        }
+        public string Title { get; set; }
+        
+        public string Description { get; set; }
 
-        public int Upvote
-        {
-            get
-            {
-                return _upvote;
-            }
-        }
+        public DateTime Created { get; set; }
 
-        public int Downvote
-        {
-            get
-            {
-                return _downvote;
-            }
-        }
+        public int Upvote { get; set; }
+
+        public int Downvote { get; set; }
 
         public int VoteCount
         {
             get
             {
-                return _upvote - _downvote;
+                return Upvote - Downvote;
             }
         }
 
@@ -83,23 +39,23 @@ namespace StackOverflowPost
         // constructor 
         public Post(string title, string description)
         {
-            _title = title;
-            _description = description;
-            _created = DateTime.Now;    
-            _upvote = 0;
-            _downvote = 0;
+            Title = title;
+            Description = description;
+            Created = DateTime.Now;    
+            Upvote = 0;
+            Downvote = 0;
         }
 
 
         //method to upvote
         public void UpvotePost()
         {
-            _upvote++;
+            Upvote++;
         }
 
         public void DownvotePost() 
         {
-            _downvote++;        
+            Downvote++;        
         }
     }
 }

@@ -99,7 +99,7 @@ namespace StackOverflowPost
 
         public void DownvotePost() 
         {
-            _downvote--;        
+            _downvote++;        
         }
     }
 }
